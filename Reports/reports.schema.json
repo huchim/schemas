@@ -88,8 +88,26 @@
       "format": "uri"
     },
     "sql": {
-      "description": "Sentencia SQL a ejecutar.",
-      "type": "string"
+      "description": "Operaciones SQL.",
+      "type": "array",
+      "items": {
+        "description": "Lista de operaciones SQL a ejecutar.",
+        "type": "object",
+        "properties": {
+          "script": {
+            "description": "Operación de selección de datos.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Nombre de la operación que dará como resultado un nodo.",
+            "type": "string"
+          },
+          "required": {
+            "description": "Lista de parámetros requeridos para la operación.",
+            "type": "array"
+          }
+        }
+      }
     },
     "private": {
       "description": "Determina si el reporte puede ser visto por usuarios no identificados.",
