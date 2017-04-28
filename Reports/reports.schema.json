@@ -52,6 +52,10 @@
       "description": "Una número de versión semántica.",
       "type": "string"
     },
+    "autorun": {
+      "description": "Determina si el reporte se puede ejecutar sin intervenció obligatorio del usuario.",
+      "type": "boolean"
+    },
     "keywords": {
       "description": "Usadas para buscar por palabras clave. Ayuda a que este reporte sea encontrado sin que el usuario conozca su nombre.",
       "type": "array",
@@ -105,6 +109,14 @@
           "label": {
             "description": "Etiqueta del argumento.",
             "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "description": "Valor predeterminado. Puede usar variables como %system.user.claims.*%."
+          },
+          "hidden": {
+            "description": "Especifica si el campo será visible para el usuario.",
+            "type": "boolean"
           },
           "description": {
             "type": "string",
