@@ -1,0 +1,107 @@
+{
+  "title": "Configuración de reportes",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Archivo de configuración de reporte.",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "patternProperties": {
+    "^_": {
+      "description": "Cualquier propiedad que comience con _ es valido.",
+      "additionalProperties": true,
+      "additionalItems": true
+    }
+  },
+  "properties": {
+    "name": {
+      "description": "El nombre del reporte.",
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 1
+    },
+    "description": {
+      "description": "Descripción que será mostrada al usuario.",
+      "type": "string",
+      "maxLength": 140
+    },
+    "version": {
+      "description": "Una número de versión semántica.",
+      "type": "string"
+    },
+    "keywords": {
+      "description": "Usadas para buscar por palabras clave. Ayuda a que este reporte sea encontrado sin que el usuario conozca su nombre.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 50
+      }
+    },
+    "authors": {
+      "description": "Una lista de autores del reporte.",
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
+    },
+    "roles": {
+      "description": "Una lista de roles que pueden visualizar este reporte.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 50
+      }
+    },
+    "homepage": {
+      "description": "URL que muestra más información sobre el reporte.",
+      "type": "string",
+      "format": "uri"
+    },
+    "sql": {
+      "description": "Sentencia SQL a ejecutar.",
+      "type": "string"
+    },
+    "private": {
+      "description": "Determina si el reporte puede ser visto por usuarios no identificados.",
+      "type": "boolean"
+    },
+    "args": {
+      "description": "Lista de argumentos que necesita el reporte para funcionar.",
+      "type": "array",
+      "items": {
+        "description": "Configuración del argumento.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Nombre del argumento.",
+            "type": "string"
+          },
+          "label": {
+            "description": "Etiqueta del argumento.",
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "description": "Descripción del argumento."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "number",
+              "text",
+              "date"
+            ]
+          },
+          "source": {
+            "description": "Define la URL del origen de datos.",
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  }
+}
