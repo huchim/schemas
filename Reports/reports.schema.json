@@ -97,8 +97,7 @@
           },
           "source": {
             "description": "Define la URL del origen de datos.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           }
         }
       }
