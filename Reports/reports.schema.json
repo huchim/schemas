@@ -20,6 +20,29 @@
       "maxLength": 50,
       "minLength": 1
     },
+    "label": {
+      "description": "El nombre del reporte visible para el usuario",
+      "type": "string",
+      "maxLength": 150,
+      "minLength": 1
+    },
+    "icon": {
+            "type": "string",
+            "enum": [
+              "bubble_chart",
+              "insert_chart",
+              "multiline_chart",
+              "pie",
+              "pie_chart",
+              "pie_chart_outlined",
+              "show_chart",
+              "dashboard",
+              "timeline",
+              "trending_up",
+              "trending_down",
+              "trending_flat",
+              "list"
+            ]},
     "description": {
       "description": "Descripción que será mostrada al usuario.",
       "type": "string",
