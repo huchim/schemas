@@ -113,6 +113,10 @@
               "description": "Parte de la rutina que será reemplazada cuando se encuentre en la lista de argumentos.",
               "type": "object",
               "properties": {
+                "description": {
+                  "description": "Una descripción de la razón de esta sustitución.",
+                  "type":"string"
+                },
                 "token": {
                   "description": "Nombre de la clave que reemplazará.",
                   "type": "string"
