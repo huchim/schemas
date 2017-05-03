@@ -105,6 +105,28 @@
           "required": {
             "description": "Lista de parámetros requeridos para la operación.",
             "type": "array"
+          },
+          "replaces": {
+            "description": "Lista de claves que serán reemplazadas solamente si existen en los argumentos.",
+            "type": "array",
+            "items": {
+              "description": "Parte de la rutina que será reemplazada cuando se encuentre en la lista de argumentos.",
+              "type": "object",
+              "properties": {
+                "token": {
+                  "description": "Nombre de la clave que reemplazará.",
+                  "type": "string"
+                },
+                "script": {
+                  "description": "Parte SQL que se agregará en caso de existir.",
+                  "type": "string"
+                },
+                "when": {
+                  "description": "Lista de campos que deben estar presentes para que esta parte sea usada.",
+                  "title": "array"
+                }
+              }
+            }
           }
         }
       }
