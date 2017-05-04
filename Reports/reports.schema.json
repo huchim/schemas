@@ -98,6 +98,10 @@
             "description": "Operación de selección de datos.",
             "type": "string"
           },
+          "file": {
+            "description": "Archivo SQL donde se encuentra el SQL.",
+            "type":"string"
+          },
           "name": {
             "description": "Nombre de la operación que dará como resultado un nodo.",
             "type": "string"
